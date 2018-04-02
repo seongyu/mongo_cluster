@@ -17,4 +17,9 @@ done
 sleep 2
 
 # Broker에 설정완료된 Shard를 등록
-docker exec -it mongos1 bash -c "echo \"sh.addShard('shard1/shard1n1:27017');\" | mongo "
+
+for (( rs=1; rs <= $REPLICA_NUM; rs++ )); do
+  echo "set Shard${rs} on Broker"
+  docker exec -it mongos1 bash -c "echo \"sh.addShard('shard${rs}/shard${rs}n1:27017');\" | mongo "
+  sleep 1
+done
