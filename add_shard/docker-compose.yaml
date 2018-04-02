@@ -1,0 +1,32 @@
+version: "2"
+services:
+
+  shard2n1:
+    container_name: shard2n1
+    image: mongo:3.0.14
+    command: mongod --noprealloc --smallfiles --replSet shard2 --dbpath /data/db --nojournal --oplogSize 16 --noauth
+    environment:
+      TERM: xterm
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /mongo_cluster/shard2n1:/data/db
+
+  shard2n2:
+    container_name: shard2n2
+    image: mongo:3.0.14
+    command: mongod --noprealloc --smallfiles --replSet shard2 --dbpath /data/db --nojournal --oplogSize 16 --noauth
+    environment:
+      TERM: xterm
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /mongo_cluster/shard2n2:/data/db
+
+  shard2n3:
+    container_name: shard2n3
+    image: mongo:3.0.14
+    command: mongod --noprealloc --smallfiles --replSet shard2 --dbpath /data/db --nojournal --oplogSize 16 --noauth
+    environment:
+      TERM: xterm
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /mongo_cluster/shard2n3:/data/db
