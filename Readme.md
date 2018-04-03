@@ -36,6 +36,8 @@ Process for add shard on sharded Cluster
  6-1. need to change the parameters in shell if changed any parameter or environment in while process 5
 7. check status
 
+Process for stand-alone MongoDB
+* Just start shell-script
 
 Careful
 - This MongoCluster has no authization. Recommend to give access authority to reliable users on the vm.
