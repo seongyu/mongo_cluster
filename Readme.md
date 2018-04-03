@@ -16,7 +16,7 @@ Composition
 Process for create Cluster with shard at first time
 1. install docker by apt-get
 2. install docker-compose
-3. git clone this project
+3. git clone https://github.com/seongyu/mongo_cluster.git
 4. cd /mongo_cluster
 5. docker-compose up
 6. exit docker
@@ -28,7 +28,7 @@ Process for create Cluster with shard at first time
 Process for add shard on sharded Cluster
 1. install docker by apt-get
 2. install docker-compose
-3. git clone project
+3. git clone https://github.com/seongyu/mongo_cluster.git
 4. cd /mongo_cluster/add_shard
 5. docker-compose up
  5-1. if it need to external access, bind external port to local primary shard node port
@@ -36,8 +36,13 @@ Process for add shard on sharded Cluster
  6-1. need to change the parameters in shell if changed any parameter or environment in while process 5
 7. check status
 
+
 Process for stand-alone MongoDB
-* Just start shell-script
+1. git clone -b stand-alone https://github.com/seongyu/mongo_cluster.git
+2. cd /mongo_cluster
+3. ./executer.sh
+
 
 Careful
 - This MongoCluster has no authization. Recommend to give access authority to reliable users on the vm.
+- All process require root account.
