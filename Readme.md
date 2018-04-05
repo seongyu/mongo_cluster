@@ -41,7 +41,16 @@ Process for stand-alone MongoDB
 1. git clone -b stand-alone https://github.com/seongyu/mongo_cluster.git
 2. cd /mongo_cluster
 3. ./executer.sh
+4. check status
 
+
+Process for stand-alone MongoDB with Authorization
+1. git clone -b stand-alone https://github.com/seongyu/mongo_cluster.git
+2. cd /mongo_cluster
+3. ./executer_with_auth.sh
+4. Input admin user name
+5. Input password
+6. check status
 
 Careful
 - This MongoCluster has no authization. Recommend to give access authority to reliable users on the vm.
