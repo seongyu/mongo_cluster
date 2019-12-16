@@ -32,7 +32,7 @@ Process for add shard on sharded Cluster
 4. cd /mongo_cluster/add_shard
 5. docker-compose up
  5-1. if it need to external access, bind external port to local primary shard node port
-6. ./initialize_shard.sh
+6. ./initialize_shard.sh 
  6-1. need to change the parameters in shell if changed any parameter or environment in while process 5
 7. check status
 
