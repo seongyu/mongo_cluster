@@ -3,8 +3,8 @@ services:
 
   shard1n1:
     container_name: shard1n1
-    image: mongo:3.0.14
-    command: mongod --noprealloc --smallfiles --replSet shard1 --dbpath /data/db --nojournal --oplogSize 16 --noauth
+    image: mongo:7
+    command: mongod --replSet shard1 --dbpath /data/db --oplogSize 16 --noauth
     environment:
       TERM: xterm
     volumes:
@@ -13,8 +13,8 @@ services:
 
   shard1n2:
     container_name: shard1n2
-    image: mongo:3.0.14
-    command: mongod --noprealloc --smallfiles --replSet shard1 --dbpath /data/db --nojournal --oplogSize 16 --noauth
+    image: mongo:7
+    command: mongod --replSet shard1 --dbpath /data/db --oplogSize 16 --noauth
     environment:
       TERM: xterm
     volumes:
@@ -23,8 +23,8 @@ services:
 
   shard1n3:
     container_name: shard1n3
-    image: mongo:3.0.14
-    command: mongod --noprealloc --smallfiles --replSet shard1 --dbpath /data/db --nojournal --oplogSize 16 --noauth
+    image: mongo:7
+    command: mongod --replSet shard1 --dbpath /data/db --oplogSize 16 --noauth
     environment:
       TERM: xterm
     volumes:
@@ -33,8 +33,8 @@ services:
 
   mconfig1:
     container_name: mconfig1
-    image: mongo:3.0.14
-    command: mongod --noprealloc --smallfiles --dbpath /data/db --configsvr --noauth --port 27017
+    image: mongo:7
+    command: mongod --dbpath /data/db --configsvr --noauth --port 27017
     environment:
       TERM: xterm
     expose:
@@ -45,8 +45,8 @@ services:
 
   mconfig2:
     container_name: mconfig2
-    image: mongo:3.0.14
-    command: mongod --noprealloc --smallfiles --dbpath /data/db --configsvr --noauth --port 27017
+    image: mongo:7
+    command: mongod --dbpath /data/db --configsvr --noauth --port 27017
     environment:
       TERM: xterm
     expose:
@@ -57,8 +57,8 @@ services:
 
   mconfig3:
     container_name: mconfig3
-    image: mongo:3.0.14
-    command: mongod --noprealloc --smallfiles --dbpath /data/db --configsvr --noauth --port 27017
+    image: mongo:7
+    command: mongod --dbpath /data/db --configsvr --noauth --port 27017
     environment:
       TERM: xterm
     expose:
@@ -69,7 +69,7 @@ services:
 
   mongos1:
     container_name: mongos1
-    image: mongo:3.0.14
+    image: mongo:7
     depends_on:
       - mconfig1
       - mconfig2
@@ -82,7 +82,7 @@ services:
 
   mongos2:
     container_name: mongos2
-    image: mongo:3.0.14
+    image: mongo:7
     depends_on:
       - mconfig1
       - mconfig2
